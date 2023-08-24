@@ -8,19 +8,5 @@
       "run": "npm run dev",
       "appDevserverUrl": "http://localhost:3000"
     }
-  },
-  "routes": [
-    {
-      "route": "/mypage",
-      "allowedRoles": [
-        "authenticated"
-      ]
-    }
-  ],
-  "responseOverrides": {
-    "401": {
-      "statusCode": 302,
-      "redirect": "/.auth/login/github"
-    }
   }
 }
