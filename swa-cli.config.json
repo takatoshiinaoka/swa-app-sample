@@ -8,5 +8,13 @@
       "run": "npm run dev",
       "appDevserverUrl": "http://localhost:3000"
     }
-  }
+  },
+  "routes": [
+    {
+      "route": "/mypage",
+      "allowedRoles": [
+        "authenticated"
+      ]
+    }
+  ]
 }
