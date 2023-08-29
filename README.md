@@ -1,6 +1,6 @@
 # next-swa-aadb2c-auth-sample
 
-https://learn.microsoft.com/ja-jp/training/modules/publish-static-web-app-authentication/
+[Azure Static Web Apps でのカスタム認証](https://learn.microsoft.com/ja-jp/azure/static-web-apps/authentication-custom?tabs=aad%2Cinvitations)
 
 ## プロジェクトの作成
 
