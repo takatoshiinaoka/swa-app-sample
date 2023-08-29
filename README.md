@@ -4,10 +4,10 @@ https://learn.microsoft.com/ja-jp/training/modules/publish-static-web-app-authen
 
 ## プロジェクトの作成
 
-next-swa-aadb2c-auth-sample プロジェクトを作成します。
+Nextプロジェクトを作成
 
 ```bash
-npx create-next-app next-swa-aadb2c-auth-sample 
+npx create-next-app <app-name> 
 ```
 
 swa-cli.config.json を作成します。
