@@ -27,7 +27,7 @@ export default function MyPage() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <h1>こんにちは、{user} さん!</h1>
-        <a href="/.auth/logout?post_logout_redirect_uri=/">ログアウト</a>
+        <a href="/logout?post_logout_redirect_uri=/">ログアウト</a>
       </main>
     </>
   );

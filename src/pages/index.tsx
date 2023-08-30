@@ -15,10 +15,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div>
-          <a
-            href="/.auth/login/aad?post_login_redirect_uri=/mypage"
-            className={styles.link}
-          >
+          <a href="/login?post_login_redirect_uri=/" className={styles.link}>
             Login
           </a>
           <a href="/mypage" className={styles.link}>
