@@ -1,4 +1,5 @@
 import styles from "@/styles/Home.module.css";
+import { Tweet } from "@/types/Tweet";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -7,15 +8,26 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function MyPage() {
   const [user, setUser] = useState("");
+  const [myTweet, setMyTweet] = useState<Array<Tweet>>([]);
 
   useEffect(() => {
     fetch("/.auth/me")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data?.clientPrincipal?.userDetails);
       });
   }, []);
+  console.log(user);
+
+  useEffect(() => {
+    fetch(`/api/GetUserTweet?user=${user}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(`/api/GetUserTweet?user=${user}`);
+        console.log(data);
+        setMyTweet(data);
+      });
+  }, [user]);
 
   return (
     <>
@@ -25,9 +37,26 @@ export default function MyPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <h1>こんにちは、{user} さん!</h1>
-        <a href="/logout?post_logout_redirect_uri=/">ログアウト</a>
+      <main className={`${inter.className}`}>
+        <header>
+          <div>
+            <a href="/">Home</a>
+          </div>
+          <div>
+            <a href="/logout?post_logout_redirect_uri=/">logout</a>
+          </div>
+        </header>
+        <div className={`${styles.header}`}>
+          <h2>{user}さんの投稿</h2>
+        </div>
+        <div>
+          {myTweet?.map((t) => (
+            <div key={t.RowKey} className={`${styles.tweet}`}>
+              <div>@{t.PartitionKey}</div>
+              <div>{t.Message}</div>
+            </div>
+          ))}
+        </div>
       </main>
     </>
   );

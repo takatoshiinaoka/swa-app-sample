@@ -1,10 +1,22 @@
 import styles from "@/styles/Home.module.css";
+import { Tweet } from "@/types/Tweet";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [tweet, setTweet] = useState<Array<Tweet>>([]);
+  useEffect(() => {
+    fetch("/api/GetAllTweet")
+      .then((res) => res.json())
+      .then((data) => {
+        setTweet(data);
+        console.log(data);
+      });
+  }, []);
+
   return (
     <>
       <Head>
@@ -13,14 +25,22 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${inter.className}`}>
+        <header>
+          <div>
+            <a href="/login?post_login_redirect_uri=/">Login</a>
+          </div>
+          <div>
+            <a href="/mypage">mypage</a>
+          </div>
+        </header>
         <div>
-          <a href="/login?post_login_redirect_uri=/" className={styles.link}>
-            Login
-          </a>
-          <a href="/mypage" className={styles.link}>
-            mypage
-          </a>
+          {tweet?.map((t) => (
+            <div key={t.RowKey} className={`${styles.tweet}`}>
+              <div>@{t.PartitionKey}</div>
+              <div>{t.Message}</div>
+            </div>
+          ))}
         </div>
       </main>
     </>

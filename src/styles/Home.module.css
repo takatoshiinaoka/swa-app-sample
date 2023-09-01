@@ -1,12 +1,6 @@
-.main {
+.tweet{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
-}
-
-.link{
-  padding: 6rem;
+  margin: 1rem;
+  background-color: lightgray;
 }
