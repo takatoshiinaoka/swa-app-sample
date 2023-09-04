@@ -3,7 +3,7 @@
   "configurations": {
     "swa-aadb2c-auth-sample": {
       "appLocation": ".",
-      "apiLocation": "api",
+      "apiLocation": "functions",
       "outputLocation": ".next",
       "apiLanguage": "node",
       "apiVersion": "16",
