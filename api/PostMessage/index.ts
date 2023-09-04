@@ -12,14 +12,14 @@ const httpTrigger: AzureFunction = async function (
   req: HttpRequest
 ): Promise<void> {
   context.log("HTTP trigger function processed a request.");
-  const userName = req.query.userName || (req.body && req.body.userName);
+  const user = req.query.user || (req.body && req.body.user);
   const message = req.query.message || (req.body && req.body.message);
 
   // パラメーターのチェック
-  if (userName == null || message == null) {
+  if (user == null || message == null) {
     context.res = {
       status: 400,
-      body: "userName and message are required.",
+      body: "user and message are required.",
     };
     return;
   }
@@ -27,7 +27,7 @@ const httpTrigger: AzureFunction = async function (
   // Todoリストに追加
   context.bindings.tableBinding = [];
   context.bindings.tableBinding.push({
-    PartitionKey: userName,
+    PartitionKey: user,
     RowKey: uuidv4(),
     Message: message,
   });

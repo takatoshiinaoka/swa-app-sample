@@ -6,8 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post"
+        "get"
       ]
     },
     {
@@ -16,13 +15,12 @@
       "name": "res"
     },
     {
-      "name": "UserTweetEntity",
+      "name": "AllMessageEntity",
       "type": "table",
-      "tableName": "Tweet",
-      "partitionKey": "{query.user}",
+      "tableName": "Message",
       "connection": "MyStorageConnectionAppSetting",
       "direction": "in"
     }
   ],
-  "scriptFile": "../dist/GetUserTweet/index.js"
+  "scriptFile": "../dist/GetAllMessage/index.js"
 }

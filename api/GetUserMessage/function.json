@@ -16,12 +16,13 @@
       "name": "res"
     },
     {
-      "tableName": "Tweet",
-      "connection": "MyStorageConnectionAppSetting",
-      "name": "tableBinding",
+      "name": "UserMessageEntity",
       "type": "table",
-      "direction": "out"
+      "tableName": "Message",
+      "partitionKey": "{query.user}",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
     }
   ],
-  "scriptFile": "../dist/PostTweet/index.js"
+  "scriptFile": "../dist/GetUserMessage/index.js"
 }

@@ -1,14 +1,15 @@
 import styles from "@/styles/Home.module.css";
-import { Tweet } from "@/types/Tweet";
+import { Message } from "@/types/Message";
 import { Inter } from "next/font/google";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function MyPage() {
   const [user, setUser] = useState("");
-  const [myTweet, setMyTweet] = useState<Array<Tweet>>([]);
+  const [message, setMessage] = useState("");
+  const [myMessage, setMyMessage] = useState<Array<Message>>([]);
 
   useEffect(() => {
     fetch("/.auth/me")
@@ -17,17 +18,37 @@ export default function MyPage() {
         setUser(data?.clientPrincipal?.userDetails);
       });
   }, []);
-  console.log(user);
 
   useEffect(() => {
-    fetch(`/api/GetUserTweet?user=${user}`)
+    getMyMessage();
+  }, [user]);
+
+  const getMyMessage = () => {
+    fetch(`/api/GetUserMessage?user=${user}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(`/api/GetUserTweet?user=${user}`);
         console.log(data);
-        setMyTweet(data);
+        setMyMessage(data);
       });
-  }, [user]);
+  };
+
+  const handleMessageChange: FormEventHandler<HTMLInputElement> = (event) => {
+    setMessage(event.currentTarget.value);
+  };
+
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    fetch("/api/PostMessage", {
+      method: "POST",
+      body: JSON.stringify({ user: user, message: message }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMessage("");
+        getMyMessage();
+      });
+  };
 
   return (
     <>
@@ -46,12 +67,19 @@ export default function MyPage() {
             <a href="/logout?post_logout_redirect_uri=/">logout</a>
           </div>
         </header>
+        <form onSubmit={handleSubmit}>
+          <label>
+            message:
+            <input type="text" value={message} onChange={handleMessageChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
         <div className={`${styles.header}`}>
           <h2>{user}さんの投稿</h2>
         </div>
         <div>
-          {myTweet?.map((t) => (
-            <div key={t.RowKey} className={`${styles.tweet}`}>
+          {myMessage?.map((t) => (
+            <div key={t.RowKey} className={`${styles.message}`}>
               <div>@{t.PartitionKey}</div>
               <div>{t.Message}</div>
             </div>

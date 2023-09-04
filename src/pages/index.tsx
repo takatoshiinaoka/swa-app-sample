@@ -1,5 +1,5 @@
 import styles from "@/styles/Home.module.css";
-import { Tweet } from "@/types/Tweet";
+import { Message } from "@/types/Message";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [tweet, setTweet] = useState<Array<Tweet>>([]);
+  const [message, setMessage] = useState<Array<Message>>([]);
   useEffect(() => {
-    fetch("/api/GetAllTweet")
+    fetch("/api/GetAllMessage")
       .then((res) => res.json())
       .then((data) => {
-        setTweet(data);
+        setMessage(data);
         console.log(data);
       });
   }, []);
@@ -35,8 +35,8 @@ export default function Home() {
           </div>
         </header>
         <div>
-          {tweet?.map((t) => (
-            <div key={t.RowKey} className={`${styles.tweet}`}>
+          {message?.map((t) => (
+            <div key={t.RowKey} className={`${styles.message}`}>
               <div>@{t.PartitionKey}</div>
               <div>{t.Message}</div>
             </div>

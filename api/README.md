@@ -6,7 +6,7 @@
 | - | - |
 | /api/GetAllTweet | 全ての投稿を返す |
 | /api/GetUserTweet?user={username} | 指定したユーザーの投稿を返す |
-| /api/PostTweet?userName={username}&taskName={taskname} | 投稿を保存する |
+| /api/PostTweet?userName={username}&message={message} | 投稿を保存する |
 
 
 ## ローカルの環境変数

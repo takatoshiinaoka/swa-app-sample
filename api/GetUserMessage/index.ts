@@ -4,7 +4,7 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  context.res = { body: context.bindings.UserTweetEntity };
+  context.res = { body: context.bindings.UserMessageEntity };
 };
 
 export default httpTrigger;

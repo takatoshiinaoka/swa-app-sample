@@ -6,7 +6,8 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get"
+        "get",
+        "post"
       ]
     },
     {
@@ -15,12 +16,12 @@
       "name": "res"
     },
     {
-      "name": "AllTweetEntity",
-      "type": "table",
-      "tableName": "Tweet",
+      "tableName": "Message",
       "connection": "MyStorageConnectionAppSetting",
-      "direction": "in"
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
     }
   ],
-  "scriptFile": "../dist/GetAllTweet/index.js"
+  "scriptFile": "../dist/PostMessage/index.js"
 }

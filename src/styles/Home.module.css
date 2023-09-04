@@ -1,6 +1,6 @@
-.tweet{
+.message{
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  background-color: lightgray;
+  background-color: skyblue;
 }
