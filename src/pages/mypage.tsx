@@ -15,6 +15,7 @@ export default function MyPage() {
     fetch("/.auth/me")
       .then((res) => res.json())
       .then((data) => {
+        console.log("auth/me:", data);
         setUser(data?.clientPrincipal?.userDetails);
       });
   }, []);
@@ -27,7 +28,7 @@ export default function MyPage() {
     fetch(`/api/GetUserMessage?user=${user}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("GetUserMessage:", data);
         setMyMessage(data);
       });
   };
@@ -44,7 +45,7 @@ export default function MyPage() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("PostMessage:", data);
         setMessage("");
         getMyMessage();
       });

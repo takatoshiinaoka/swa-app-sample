@@ -13,7 +13,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setMessage(data);
-        console.log(data);
+        console.log("GetAllMessage:", data);
       });
   }, []);
 
