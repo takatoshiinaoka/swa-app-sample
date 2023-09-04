@@ -37,7 +37,9 @@ export default function Home() {
         <div>
           {message?.map((t) => (
             <div key={t.RowKey} className={`${styles.message}`}>
-              <div>@{t.PartitionKey}</div>
+              <div>
+                <b>@{t.PartitionKey}</b>
+              </div>
               <div>{t.Message}</div>
             </div>
           ))}
