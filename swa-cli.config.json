@@ -1,7 +1,7 @@
 {
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
-    "swa-aadb2c-auth-sample": {
+    "swa-app-sample": {
       "appLocation": "frontend",
       "apiLocation": "api",
       "outputLocation": "dist",
