@@ -1,9 +1,4 @@
-# ts-next-swa-api-sample
-
-## 概要
-
-Azure Static Web Apps認証のサンプルです。
-
+# swa-app-sample
 ## 前提条件
 
 - Visual Studio Code
@@ -40,7 +35,6 @@ Azure Static Web Apps認証のサンプルです。
 ### docs
 
 - [プロジェクトの作成](./docs/MakeProject.md)
-- [デプロイ](./docs/Deploy.md)
 
 
 ## 関連リンク
