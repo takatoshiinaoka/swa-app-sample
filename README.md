@@ -49,7 +49,7 @@ Azure Static Web Apps の機能を使ったサンプルアプリケーション
 ## 関連リンク
 
 - [Azure Static Web Apps 用にローカル開発環境を設定する](https://learn.microsoft.com/ja-jp/azure/static-web-apps/local-development)
-- [Azure Static Web Apps でのカスタム認証](https://learn.microsoft.com/ja-jp/azure/static-web-apps/authentication-custom?tabs=aad%2Cinvitations)
+- [Core Tools を使用してローカルで Azure Functions を開発する](https://learn.microsoft.com/ja-jp/azure/azure-functions/functions-run-local?tabs=macos%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-typescript)
 - [クイックスタート: コマンド ラインから Azure に TypeScript 関数を作成する](https://learn.microsoft.com/ja-jp/azure/azure-functions/create-first-function-cli-typescript?tabs=macos%2Cazure-cli%2Cbrowser&pivots=nodejs-model-v3)
 - [Azure Functions における Azure Tables のバインド](https://learn.microsoft.com/ja-jp/azure/azure-functions/functions-bindings-storage-table?tabs=in-process%2Ctable-api%2Cextensionv3&pivots=programming-language-javascript)
-- [Azure Static Web Apps に Next.js ハイブリッド サイトをデプロイする (スタンドアロン機能を有効にする)](https://learn.microsoft.com/ja-jp/azure/static-web-apps/deploy-nextjs-hybrid#enable-standalone-feature)
+- [Storage Explorer の概要](https://learn.microsoft.com/ja-jp/azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&bc=%2Fazure%2Fstorage%2Fblobs%2Fbreadcrumb%2Ftoc.json&tabs=macos)
