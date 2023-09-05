@@ -1,6 +1,5 @@
 import {  useEffect, useState } from "react";
 
-
 export default function MyPage() {
   const [user, setUser] = useState("");
   const [message, setMessage] = useState("");
@@ -47,35 +46,33 @@ export default function MyPage() {
   };
 
   return (
-    <>
-      <main>
-        <header>
-          <div>
-            <a href="/">Home</a>
-          </div>
-          <div>
-            <a href="/logout?post_logout_redirect_uri=/">logout</a>
-          </div>
-        </header>
-        <form onSubmit={handleSubmit}>
-          <label>
-            message:
-            <input type="text" value={message} onChange={handleMessageChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
-        <div className="header">
-          <h2>{user}さんの投稿</h2>
+    <main>
+      <header>
+        <div>
+          <a href="/">Home</a>
         </div>
         <div>
-          {myMessage?.map((t) => (
-            <div key={t.RowKey} className="message">
-              <div>@{t.PartitionKey}</div>
-              <div>{t.Message}</div>
-            </div>
-          ))}
+          <a href="/logout?post_logout_redirect_uri=/">logout</a>
         </div>
-      </main>
-    </>
+      </header>
+      <form onSubmit={handleSubmit}>
+        <label>
+          message:
+          <input type="text" value={message} onChange={handleMessageChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+      <div className="header">
+        <h2>{user}さんの投稿</h2>
+      </div>
+      <div>
+        {myMessage?.map((t) => (
+          <div key={t.RowKey} className="message">
+            <div>@{t.PartitionKey}</div>
+            <div>{t.Message}</div>
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
