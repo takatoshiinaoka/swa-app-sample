@@ -1,4 +1,5 @@
 # swa-app-sample
+
 ## 前提条件
 
 - Visual Studio Code
@@ -18,15 +19,18 @@
 2. api/local.settings.jsonを作成
    1. [api/README.md](./api/README.md)を参考
 3. パッケージのインストール
+
     ```bash
     npm install
     cd api
     npm install
     ```
+
 4. Azriteの起動
    1. ctrl + shift + p
    2. Azurite: Start
 5. ローカルサーバーの起動
+
     ```bash
     swa build
     swa start
@@ -35,7 +39,6 @@
 ### docs
 
 - [プロジェクトの作成](./docs/MakeProject.md)
-
 
 ## 関連リンク
 
