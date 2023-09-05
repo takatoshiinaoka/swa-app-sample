@@ -1,8 +1,4 @@
-# ts-next-swa-api-sample
-
-## 概要
-
-Azure Static Web Apps認証のサンプルです。
+# swa-app-sample
 
 ## 前提条件
 
@@ -23,15 +19,18 @@ Azure Static Web Apps認証のサンプルです。
 2. api/local.settings.jsonを作成
    1. [api/README.md](./api/README.md)を参考
 3. パッケージのインストール
+
     ```bash
     npm install
     cd api
     npm install
     ```
+
 4. Azriteの起動
    1. ctrl + shift + p
    2. Azurite: Start
 5. ローカルサーバーの起動
+
     ```bash
     swa build
     swa start
@@ -40,8 +39,6 @@ Azure Static Web Apps認証のサンプルです。
 ### docs
 
 - [プロジェクトの作成](./docs/MakeProject.md)
-- [デプロイ](./docs/Deploy.md)
-
 
 ## 関連リンク
 

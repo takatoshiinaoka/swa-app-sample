@@ -1,9 +1,19 @@
 # プロジェクトの作成
 
-Nextプロジェクトを作成
+Reactプロジェクトを作成
 
 ```bash
-npx create-next-app <app-name> 
+npm create vite@latest react-app -- --template react
+cd react-app/
+```
+
+React Routerをインストール
+
+```bash
+npm install react-router-dom localforage match-sorter sort-by
+mkdir src/routes
+touch src/routes/Home.jsx
+touch src/routes/MyPage.jsx
 ```
 
 Functionプロジェクトを作成
@@ -29,19 +39,18 @@ swa-cli.config.json を確認します。
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
     "swa-aadb2c-auth-sample": {
-      "appLocation": ".",
+      "appLocation": "frontend",
       "apiLocation": "api",
-      "outputLocation": ".next",
+      "outputLocation": "dist",
       "apiLanguage": "node",
       "apiVersion": "16",
       "appBuildCommand": "npm run build",
       "apiBuildCommand": "npm run build --if-present",
       "run": "npm run dev",
-      "appDevserverUrl": "http://localhost:3000"
+      "appDevserverUrl": "http://localhost:5173"
     }
   }
 }
-
 ```
 
 認証情報の設定
