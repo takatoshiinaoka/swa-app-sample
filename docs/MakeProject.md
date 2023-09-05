@@ -1,9 +1,19 @@
 # プロジェクトの作成
 
-Nextプロジェクトを作成
+Reactプロジェクトを作成
 
 ```bash
-npx create-next-app <app-name> 
+npm create vite@latest react-app -- --template react
+cd react-app/
+```
+
+React Routerをインストール
+
+```bash
+npm install react-router-dom localforage match-sorter sort-by
+mkdir src/routes
+touch src/routes/Home.jsx
+touch src/routes/MyPage.jsx
 ```
 
 Functionプロジェクトを作成
