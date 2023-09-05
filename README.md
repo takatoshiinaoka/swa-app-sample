@@ -1,5 +1,11 @@
 # swa-app-sample
 
+Azure Static Web Apps の機能を使ったサンプルアプリケーション
+
+## 構成図
+
+![構成図](./docs/images/architecture.jpg)
+
 ## 前提条件
 
 - Visual Studio Code
