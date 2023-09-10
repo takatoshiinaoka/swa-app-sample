@@ -1,6 +1,6 @@
-# swa-app-sample
+# anyway-cheerful-sns
 
-Azure Static Web Apps の機能を使ったサンプルアプリケーション
+　とにかく明るくなれるSNS
 
 ## 構成図
 
